@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#102f43">
+  <meta name="description" content="Sort and filter the reported cardiovascular classification results, compare the portfolio rerun, and export a CSV view.">
+  <title>Results explorer / Cardio research</title>
+  <link rel="icon" href="assets/mark.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="style.css"><link rel="stylesheet" href="explorer.css">
+  <script src="explorer-data.js" defer></script><script src="explorer.js" defer></script>
+</head>
+<body class="explorer-page">
+  <a class="skip" href="#main">Skip to results table</a>
+  <header class="header"><a class="wordmark" href="index.html"><span class="mark">c<span>·</span></span><span>CARDIO<span class="brand-sub">CARDIOVASCULAR ML RESEARCH</span></span></a><nav aria-label="Page navigation"><a href="index.html">← Research story</a><a href="https://github.com/Siddique-SID/cardiovascular-ml-dissertation">Repository ↗</a></nav></header>
+  <main id="main" class="explorer-main">
+    <section class="explorer-intro"><p class="eyebrow">THE RESEARCH DESK / INTERACTIVE RESULTS</p><h1>Look closer.<br><em>Ask a different question.</em></h1><p>Seven classifiers. Five metrics. Explore the reported results, inspect the rerun and take the data with you.</p><span class="snapshot-label"><i></i> RECORDED EXPERIMENTS · NO LIVE MODEL TRAINING</span></section>
+    <section class="explorer-workbench" aria-label="Results explorer">
+      <div class="explorer-controls"><label for="dataset">RESULT SOURCE<select id="dataset"><option value="reported">Dissertation — reported</option><option value="rerun">Portfolio — rerun</option><option value="delta">Difference — rerun minus reported</option></select></label><label for="search-model">FILTER MODELS<input type="search" id="search-model" placeholder="Try Random Forest or KNN" autocomplete="off"></label><label for="score-format">SCORE DISPLAY<select id="score-format"><option value="decimal">Decimals</option><option value="percent">Percentages / percentage points</option></select></label><button id="reset-table" type="button" class="reset-button">Reset</button></div>
+      <div class="explorer-summary"><div><span>MODELS IN VIEW</span><strong id="model-count">7 <small>/ 7</small></strong></div><div><span id="best-label">BEST ROC-AUC IN VIEW</span><strong id="best-score">0.8062</strong><small id="best-model">Random Forest (Tuned)</small></div><div class="summary-context"><span>EXPERIMENT CONTEXT</span><p>68,627 cleaned records<br>80/20 stratified split · seed 42<br>Shared held-out test set</p></div></div>
+      <div class="table-toolbar"><p id="table-status" role="status" aria-live="polite">7 models · sorted by ROC-AUC, highest first</p><button id="export-table" type="button">Export this view <span aria-hidden="true">↓</span></button></div>
+      <div class="table-scroll" tabindex="0" role="region" aria-label="Scrollable model results table"><table class="live-results"><caption id="table-caption">Reported dissertation results from Table 3.2 and Appendix A.</caption><thead><tr><th scope="col" data-key="Model" aria-sort="none"><button type="button">Model <span aria-hidden="true">↕</span></button></th><th scope="col" data-key="Accuracy" aria-sort="none"><button type="button" title="Proportion of cases classified correctly">Accuracy <span aria-hidden="true">↕</span></button></th><th scope="col" data-key="Precision" aria-sort="none"><button type="button" title="Proportion of predicted positives that are truly positive">Precision <span aria-hidden="true">↕</span></button></th><th scope="col" data-key="Recall" aria-sort="none"><button type="button" title="Proportion of actual positives identified">Recall <span aria-hidden="true">↕</span></button></th><th scope="col" data-key="F1" aria-sort="none"><button type="button" title="Harmonic mean of precision and recall">F1 score <span aria-hidden="true">↕</span></button></th><th scope="col" data-key="ROC-AUC" aria-sort="descending"><button type="button" title="Ranking discrimination across thresholds">ROC-AUC <span aria-hidden="true">↓</span></button></th></tr></thead><tbody id="result-rows"></tbody></table></div>
+      <div class="explorer-key"><span><i></i> Column leader in current view</span><p>Click a column heading to sort. Percent display keeps ROC-AUC as a decimal score.</p></div>
+      <p class="source-context" id="source-context">Historical point estimates from the dissertation, cross-checked against the original working notebook. Small differences were not shown to be statistically significant.</p>
+    </section>
+    <section class="explorer-notes"><div><p class="eyebrow">FOLLOW THE EVIDENCE</p><h2>The numbers have<br>a <em>paper trail.</em></h2></div><div><a href="resources/model-results.csv" download>Reported results / CSV <span>↓</span></a><a href="resources/reproduced-model-results.csv" download>Portfolio rerun / CSV <span>↓</span></a><a href="resources/dissertation.pdf">Dissertation / PDF <span>↗</span></a><a href="https://github.com/Siddique-SID/cardiovascular-ml-dissertation/blob/main/docs/VERIFICATION.md">Verification scope / GitHub <span>↗</span></a></div></section>
+    <noscript><p>This table needs JavaScript. <a href="resources/model-results.csv">Download the reported CSV</a> or read the dissertation.</p></noscript>
+  </main>
+  <footer class="explorer-footer"><span>SIDDIQUE SAYED · MSc COMP702 · UNIVERSITY OF LIVERPOOL</span><a href="index.html">Back to the research story ↗</a></footer>
+</body>
+</html>

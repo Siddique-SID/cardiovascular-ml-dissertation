@@ -1,0 +1,2 @@
+# Optional: regenerate README animations and result tables.
+Pillow>=10.1,<13

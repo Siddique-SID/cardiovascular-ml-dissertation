@@ -8,7 +8,13 @@ The interesting result was the trade-off: Random Forest led on accuracy and ROC-
 
 **[Explore the visual research page](https://siddique-cardio-research.sayedsiddique1322.chatgpt.site)** · **[Read the dissertation](dist/resources/dissertation.pdf)** · **[Open the notebook](notebooks/analysis.ipynb)** · **[Verification record](docs/VERIFICATION.md)**
 
-The hosted preview and repository are initially private for review. The visual page includes animated cardiovascular artwork, selectable metric rankings, a two-model comparison and an interactive methodology walkthrough. Motion can be paused, and reduced-motion preferences are respected.
+The repository is public. The hosted research page is currently an owner-only preview. The visual page includes animated cardiovascular artwork, selectable metric rankings, a two-model comparison and an interactive methodology walkthrough. Motion can be paused, and reduced-motion preferences are respected.
+
+## See the experiment in motion
+
+![Animated walkthrough of cleaning, splitting, comparing and evaluating](docs/experiment-flow.gif)
+
+A schematic of the completed workflow, generated from the project facts. [Static version](docs/experiment-flow.png).
 
 ## The experiment
 
@@ -22,21 +28,62 @@ The hosted preview and repository are initially private for review. The visual p
 | Measures | Accuracy, precision, recall, F1 and ROC-AUC |
 | Extra analysis | Correlation, VIF, association tests, feature ablation and separate threshold analysis |
 
+## Change the metric. Change the leader.
+
+![Animated ranking of all seven classifiers across five reported metrics](docs/metric-leaders.gif)
+
+Recorded dissertation results, not a live training feed. Every bar uses a 0–1 scale. [Static version](docs/metric-leaders.png) · [Source CSV](results/final_model_comparison.csv).
+
+<!-- BEGIN LEADERS -->
+| Metric | Leading model | Reported score |
+| --- | --- | ---: |
+| Accuracy | Random Forest (Tuned) | **0.7389** |
+| Precision | AdaBoost | **0.7699** |
+| Recall | KNN (Tuned) | **0.6885** |
+| F1 | KNN (Tuned) | **0.7197** |
+| ROC-AUC | Random Forest (Tuned) | **0.8062** |
+<!-- END LEADERS -->
+
+**[Open the interactive results table](https://siddique-cardio-research.sayedsiddique1322.chatgpt.site/explorer.html)** — sort metrics, filter models, switch between reported results and the rerun, and export the current view. The hosted page currently requires owner access. To use it locally, serve `dist/` and open `/explorer.html`.
+
 ## Reported dissertation results
 
 Values below are the historical primary comparison from Table 3.2 / Appendix A, cross-checked against the original working notebook. They are not substituted with newer rerun scores.
 
+<!-- BEGIN RESULTS -->
 | Model | Accuracy | Precision | Recall | F1 | ROC-AUC |
 | --- | ---: | ---: | ---: | ---: | ---: |
 | Logistic Regression | 0.7305 | 0.7579 | 0.6689 | 0.7106 | 0.7943 |
 | Decision Tree | 0.6417 | 0.6387 | 0.6349 | 0.6368 | 0.6418 |
-| Random Forest (tuned) | **0.7389** | 0.7698 | 0.6736 | 0.7185 | **0.8062** |
+| Random Forest (Tuned) | **0.7389** | 0.7698 | 0.6736 | 0.7185 | **0.8062** |
 | AdaBoost | 0.7309 | **0.7699** | 0.6504 | 0.7051 | 0.7984 |
 | Linear SVM | 0.7277 | 0.7605 | 0.6563 | 0.7046 | 0.7943 |
-| KNN (tuned) | 0.7347 | 0.7539 | **0.6885** | **0.7197** | 0.7970 |
+| KNN (Tuned) | 0.7347 | 0.7539 | **0.6885** | **0.7197** | 0.7970 |
 | Gaussian Naive Bayes | 0.7111 | 0.7595 | 0.6087 | 0.6758 | 0.7816 |
+<!-- END RESULTS -->
 
 Small differences between the strongest models were not shown to be statistically significant. Feature-ablation experiments found no material predictive improvement from the engineered feature representations. The unrestricted Decision Tree showed overfitting.
+
+<details>
+<summary><b>Compare the historical results with the portfolio rerun</b></summary>
+
+The same recovered final configurations were rerun in a new environment. Scores differ slightly; the reason for each difference has not been established. The historical figures remain the source for the main charts.
+
+<!-- BEGIN RERUN -->
+| Model | Reported accuracy | Rerun accuracy | Reported ROC-AUC | Rerun ROC-AUC |
+| --- | ---: | ---: | ---: | ---: |
+| Logistic Regression | 0.7305 | 0.7304 | 0.7943 | 0.7943 |
+| Decision Tree | 0.6417 | 0.6388 | 0.6418 | 0.6388 |
+| Random Forest (Tuned) | 0.7389 | 0.7385 | 0.8062 | 0.8060 |
+| AdaBoost | 0.7309 | 0.7283 | 0.7984 | 0.7967 |
+| Linear SVM | 0.7277 | 0.7278 | 0.7943 | 0.7943 |
+| KNN (Tuned) | 0.7347 | 0.7350 | 0.7970 | 0.7969 |
+| Gaussian Naive Bayes | 0.7111 | 0.7110 | 0.7816 | 0.7816 |
+<!-- END RERUN -->
+
+[All rerun metrics](results/reproduced_model_comparison.csv) · [Metric deltas](results/reproduction_deltas.csv) · [Environment versions](results/reproduction_environment.json) · [Verification scope](docs/VERIFICATION.md)
+
+</details>
 
 ## Run the analysis
 
@@ -67,6 +114,17 @@ python -m http.server 8080 --directory dist
 
 Open `http://localhost:8080`. Charts read `dist/results.js`; the downloadable CSV contains the same historical values. The heart illustration and classifier glyph are decorative research motifs, not patient measurements or a plot of model results.
 
+## Keep the visuals connected to the data
+
+The tables above, both new GIFs and the interactive table data are generated from the two CSV result files. After changing a result file, regenerate the presentation assets:
+
+```bash
+pip install -r requirements-visuals.txt
+python scripts/build_portfolio_visuals.py
+```
+
+This command updates the presentation; it does not train models. GitHub renders the README tables and GIFs, while the browser page provides the sorting and filtering.
+
 ## Files
 
 | Path | Contents |
@@ -77,7 +135,8 @@ Open `http://localhost:8080`. Charts read `dist/results.js`; the downloadable CS
 | `results/final_model_comparison.csv` | Historical reported figures |
 | `results/reproduced_model_comparison.csv` | Separate current-environment rerun |
 | `results/reproduction_deltas.csv` | Rerun minus historical values |
-| `dist/` | Visual research website and downloadable resources |
+| `dist/` | Research website, interactive results explorer and downloadable resources |
+| `scripts/build_portfolio_visuals.py` | Regenerates the tables, explorer data and two GIFs from CSVs |
 | `docs/VERIFICATION.md` | Source provenance, verification scope and limitations |
 
 ## Scope and authorship
