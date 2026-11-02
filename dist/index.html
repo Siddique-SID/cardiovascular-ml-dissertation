@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#300c19">
+  <meta name="description" content="Seven classifiers. One controlled comparison. Explore Siddique Sayed's MSc research into cardiovascular disease classification.">
+  <title>Cardio — A study in comparison / Siddique Sayed</title>
+  <link rel="icon" href="assets/mark.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="style.css">
+  <script src="results.js" defer></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to research</a>
+  <header class="header">
+    <a class="wordmark" href="#top" aria-label="Cardio research home"><span class="mark">c<span>·</span></span><span>CARDIO<span class="brand-sub">A STUDY IN COMPARISON</span></span></a>
+    <nav aria-label="Main navigation"><a href="#experiment">The experiment</a><a href="#results">Results</a><a href="#resources">Explore the work <span aria-hidden="true">↗</span></a></nav>
+    <button id="motion" class="motion" type="button" aria-pressed="false"><span class="motion-dot"></span><span id="motion-label">Pause motion</span></button>
+  </header>
+  <main id="main">
+    <section id="top" class="hero">
+      <div class="hero-meta"><span>RESEARCH PORTFOLIO / 01</span><span>UNIVERSITY OF LIVERPOOL · 2026</span></div>
+      <div class="hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow"><span class="tiny-line"></span> MACHINE LEARNING × CARDIOVASCULAR DATA</p>
+          <h1>Seven models.<br>One <em>shared</em> test.</h1>
+          <p class="hero-description">A closer look at what changes when the data stays the same — and the algorithm doesn't.</p>
+          <div class="hero-actions"><a class="button light" href="#results">Explore the results <span aria-hidden="true">↗</span></a><a class="text-link" href="resources/dissertation.pdf">Read the dissertation <span aria-hidden="true">↓</span></a></div>
+          <div class="author"><span class="initials">SS</span><span><strong>Siddique Sayed</strong><small>MSc Advanced Data Science & AI · COMP702</small></span></div>
+        </div>
+        <div class="hero-art" role="img" aria-label="Abstract seven-orbit illustration representing seven models studying 70,000 source records">
+          <span class="art-corner top-left">FIG. 01 / CONTROLLED COMPARISON</span>
+          <svg class="orbit-art" viewBox="0 0 600 550" aria-hidden="true">
+            <defs>
+              <radialGradient id="glow"><stop stop-color="#fa9fae" stop-opacity=".3"/><stop offset="1" stop-color="#f999ac" stop-opacity="0"/></radialGradient>
+              <linearGradient id="orbitColor" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#ffc8c2"/><stop offset=".5" stop-color="#ab546e"/><stop offset="1" stop-color="#f4b79a"/></linearGradient>
+            </defs>
+            <circle cx="300" cy="270" r="250" fill="url(#glow)"/>
+            <g class="orbital-lines" fill="none" stroke="url(#orbitColor)" stroke-width=".8">
+              <ellipse cx="300" cy="270" rx="245" ry="91" transform="rotate(-35 300 270)"/>
+              <ellipse cx="300" cy="270" rx="245" ry="91" transform="rotate(-10 300 270)"/>
+              <ellipse cx="300" cy="270" rx="245" ry="91" transform="rotate(15 300 270)"/>
+              <ellipse cx="300" cy="270" rx="245" ry="91" transform="rotate(40 300 270)"/>
+              <ellipse cx="300" cy="270" rx="245" ry="91" transform="rotate(65 300 270)"/>
+              <ellipse cx="300" cy="270" rx="245" ry="91" transform="rotate(90 300 270)"/>
+              <ellipse cx="300" cy="270" rx="245" ry="91" transform="rotate(115 300 270)"/>
+            </g>
+            <g class="orbital-dots" fill="#ffd9c8"><circle cx="126" cy="120" r="4"/><circle cx="495" cy="201" r="4"/><circle cx="325" cy="505" r="4"/><circle cx="82" cy="355" r="4"/><circle cx="413" cy="65" r="4"/></g>
+            <circle cx="300" cy="270" r="110" fill="#300c19" stroke="#b7677e" stroke-width=".7"/>
+            <circle cx="300" cy="270" r="101" fill="none" stroke="#633045" stroke-width=".5"/>
+            <text x="300" y="268" text-anchor="middle" fill="#fff0df" font-family="Georgia,serif" font-size="45">70,000</text>
+            <text x="300" y="296" text-anchor="middle" fill="#cf9baa" font-family="Arial,sans-serif" font-size="9" letter-spacing="3">SOURCE RECORDS</text>
+          </svg>
+          <span class="art-tag tag-one"><i></i> 7 CLASSIFIERS</span><span class="art-tag tag-two"><i></i> 5 EVALUATION METRICS</span>
+          <span class="art-corner bottom-right">SAME DATA. DIFFERENT PERSPECTIVES.</span>
+        </div>
+      </div>
+      <div class="hero-foot"><span>SUPERVISED LEARNING / SEPTEMBER 2026</span><a href="#experiment">SCROLL TO INVESTIGATE <span aria-hidden="true">↓</span></a></div>
+    </section>
+
+    <section id="experiment" class="section experiment">
+      <div class="section-top"><p class="eyebrow">01 / THE EXPERIMENT</p><span class="side-note">Consistency before complexity.</span></div>
+      <div class="intro-grid"><h2>Keep the comparison <em>fair.</em></h2><p class="section-intro">Seven supervised learning algorithms, evaluated on the same cleaned data and held-out split. The question was bigger than “which score is highest?”</p></div>
+      <div class="dataset-flow" aria-label="Dataset preparation and split">
+        <div class="flow-source"><span class="label">PUBLIC SOURCE DATASET</span><strong>70,000<span>records</span></strong><p>Cardiovascular Disease dataset<br>Svetlana Ulianova / Kaggle</p></div>
+        <div class="flow-arrow" aria-hidden="true">→</div>
+        <div class="flow-clean"><span class="label">AFTER PLAUSIBILITY FILTERS</span><strong>68,627<span>retained</span></strong><p>1,373 rows removed · 98.04% retained<br>Height, weight, blood pressure & BMI checks</p></div>
+        <div class="flow-split"><span class="label">STRATIFIED 80 / 20 SPLIT</span><div class="split-track"><span></span></div><div class="split-labels"><p><b>54,901</b><span>training records</span></p><p><b>13,726</b><span>test records</span></p></div></div>
+      </div>
+      <div class="method">
+        <div class="method-menu" role="group" aria-label="Explore methodology">
+          <button type="button" data-method="0" aria-pressed="true"><span>01</span> Inspect & clean <i>↗</i></button>
+          <button type="button" data-method="1" aria-pressed="false"><span>02</span> Engineer & question <i>↗</i></button>
+          <button type="button" data-method="2" aria-pressed="false"><span>03</span> Fit & validate <i>↗</i></button>
+          <button type="button" data-method="3" aria-pressed="false"><span>04</span> Compare & reflect <i>↗</i></button>
+        </div>
+        <div class="method-detail" aria-live="polite"><span class="detail-number" id="method-number" aria-hidden="true">01</span><div><p class="eyebrow" id="method-kicker">DATA QUALITY</p><h3 id="method-title">Start with the measurements.</h3><p id="method-body">The source had no missing values, but that did not make every measurement plausible. Fixed rules removed extreme height, weight, blood-pressure and BMI values before modelling.</p><p class="method-foot" id="method-foot">Cleaning rules are included in the analysis notebook and preparation script.</p></div></div>
+      </div>
+    </section>
+
+    <section id="results" class="section results-section">
+      <div class="section-top"><p class="eyebrow">02 / THE RESULTS</p><span class="side-note">Change the metric. See the trade-off.</span></div>
+      <div class="intro-grid"><h2>A different lens.<br>A different <em>leader.</em></h2><p class="section-intro">Accuracy is one view of performance. Explore all five metrics to see why the best model depends on the question you ask.</p></div>
+      <div class="results-panel">
+        <div class="chart-header"><div><span class="label">PRIMARY HELD-OUT COMPARISON</span><h3 id="chart-title">Ranking by ROC-AUC</h3></div><p>0–1 scale<br><span>Higher is better</span></p></div>
+        <div class="metric-controls" role="group" aria-label="Select evaluation metric">
+          <button type="button" data-metric="ROC-AUC" aria-pressed="true">ROC-AUC</button><button type="button" data-metric="Accuracy" aria-pressed="false">Accuracy</button><button type="button" data-metric="Precision" aria-pressed="false">Precision</button><button type="button" data-metric="Recall" aria-pressed="false">Recall</button><button type="button" data-metric="F1" aria-pressed="false">F1 score</button>
+        </div>
+        <p class="metric-description" id="metric-description">ROC-AUC measures how well scores rank positive cases above negative cases across thresholds.</p>
+        <div id="ranking" class="ranking" role="list" aria-label="Model ranking by ROC-AUC"></div>
+        <div class="chart-axis" aria-hidden="true"><span>0.00</span><span>0.25</span><span>0.50</span><span>0.75</span><span>1.00</span></div>
+        <div class="chart-note" aria-live="polite"><span class="note-symbol">↗</span><p id="winner-note">Random Forest leads on ROC-AUC at 0.8062. The closest competitors remain close; statistical significance was not established.</p></div>
+        <p class="source-note">Reported dissertation results · Table 3.2 & Appendix A · rounded to four decimals. Bars start at zero.</p>
+      </div>
+      <div class="takeaways"><div><span class="label">BEST ACCURACY</span><strong>73.89<span>%</span></strong><p>Random Forest (tuned)</p></div><div><span class="label">BEST ROC-AUC</span><strong>0.8062</strong><p>Random Forest (tuned)</p></div><div><span class="label">BEST RECALL</span><strong>68.85<span>%</span></strong><p>KNN (tuned)</p></div><div><span class="label">BEST F1 SCORE</span><strong>0.7197</strong><p>KNN (tuned)</p></div></div>
+    </section>
+
+    <section id="compare" class="section compare-section">
+      <div class="section-top"><p class="eyebrow">03 / SIDE BY SIDE</p><span class="side-note">Look beyond a single score.</span></div>
+      <div class="compare-layout"><div><h2>Put two models<br>in <em>conversation.</em></h2><p class="section-intro">Choose a pair. Read the five metrics together, including the small differences that a headline result can hide.</p><p class="compare-legend"><span class="legend-a"></span> Model A <span class="legend-b"></span> Model B</p></div><div class="compare-panel"><div class="select-grid"><label for="model-a">MODEL A<select id="model-a"></select></label><label for="model-b">MODEL B<select id="model-b"></select></label></div><div id="comparison" aria-label="Selected models compared across five metrics"></div><p id="comparison-note" class="comparison-note" aria-live="polite"></p></div></div>
+    </section>
+
+    <section class="section findings">
+      <div class="section-top"><p class="eyebrow">04 / WHAT THE SCORES DON'T SAY</p><span class="side-note">Research is also knowing where to stop.</span></div>
+      <div class="findings-grid"><h2>The useful part<br>was the <em>questioning.</em></h2><div class="finding-list"><article><span>01</span><div><h3>More features didn't mean better results.</h3><p>BMI and pulse pressure sounded useful. The ablation experiments found no material improvement from adding them. Intuition needed to be tested.</p></div></article><article><span>02</span><div><h3>A complex model can still overfit.</h3><p>The unrestricted Decision Tree performed weakest in the primary comparison. Tuning and validation mattered more than complexity alone.</p></div></article><article><span>03</span><div><h3>One dataset is not the real world.</h3><p>No external validation or probability-calibration study was completed. Small score differences were not shown to be statistically significant. This is an academic classification study, not a clinical diagnostic tool.</p></div></article></div></div>
+    </section>
+
+    <section id="resources" class="section resources">
+      <div class="section-top"><p class="eyebrow">05 / OPEN THE WORK</p><span class="side-note">From the visual story to the details.</span></div>
+      <h2>Evidence, <em>included.</em></h2>
+      <div class="resource-list"><a href="resources/dissertation.pdf"><span class="resource-format">PDF / 32 PAGES</span><span><strong>The dissertation</strong><small>Full methodology, discussion & references · student ID removed</small></span><span class="resource-arrow">↗</span></a><a href="resources/analysis.ipynb" download><span class="resource-format">JUPYTER / PYTHON</span><span><strong>The analysis notebook</strong><small>Recovered final workflow · supplied without stored outputs</small></span><span class="resource-arrow">↓</span></a><a href="resources/model-results.csv" download><span class="resource-format">CSV / 7 MODELS</span><span><strong>The reported results</strong><small>Five evaluation metrics · source for this page's charts</small></span><span class="resource-arrow">↓</span></a><a href="https://github.com/Siddique-SID/cardiovascular-ml-dissertation"><span class="resource-format">GITHUB / REPOSITORY</span><span><strong>The project files</strong><small>Notebook, preparation script, provenance & visual page source</small></span><span class="resource-arrow">↗</span></a></div>
+      <p class="resource-note">The website visualises the dissertation's reported results. A separate verification record in the repository distinguishes historical figures from newly reproduced outputs. Source data is linked, not redistributed.</p>
+    </section>
+    <noscript><section class="section"><h2>Reported results</h2><p>Interactive charts require JavaScript. <a href="resources/model-results.csv">Download all model results as CSV</a> or <a href="resources/dissertation.pdf">read Table 3.2 in the dissertation</a>.</p></section></noscript>
+  </main>
+  <footer class="footer"><div><span class="eyebrow">RESEARCH BY</span><a class="footer-name" href="https://www.linkedin.com/in/siddiquesayed124">Siddique Sayed <span>↗</span></a><p>Software development. Applied AI. Questions worth testing.</p></div><div class="footer-links"><a href="https://github.com/Siddique-SID">GitHub ↗</a><a href="https://www.linkedin.com/in/siddiquesayed124">LinkedIn ↗</a><a href="#top">Back to top ↑</a></div><p class="footer-bottom">MSc COMP702 · University of Liverpool · September 2026<span>PORTFOLIO PRESENTATION / NOVEMBER 2026</span></p></footer>
+</body>
+</html>
