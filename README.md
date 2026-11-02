@@ -8,7 +8,7 @@ The interesting result was the trade-off: Random Forest led on accuracy and ROC-
 
 **[Explore the visual research page](https://siddique-cardio-research.sayedsiddique1322.chatgpt.site)** · **[Read the dissertation](dist/resources/dissertation.pdf)** · **[Open the notebook](notebooks/analysis.ipynb)** · **[Verification record](docs/VERIFICATION.md)**
 
-The hosted preview and repository are initially private for review. The visual page includes animated orbital artwork, selectable metric rankings, a two-model comparison and an interactive methodology walkthrough. Motion can be paused, and reduced-motion preferences are respected.
+The hosted preview and repository are initially private for review. The visual page includes animated cardiovascular artwork, selectable metric rankings, a two-model comparison and an interactive methodology walkthrough. Motion can be paused, and reduced-motion preferences are respected.
 
 ## The experiment
 
@@ -65,7 +65,7 @@ The page is buildless HTML, CSS and JavaScript, with no API keys or external lib
 python -m http.server 8080 --directory dist
 ```
 
-Open `http://localhost:8080`. Charts read `dist/results.js`; the downloadable CSV contains the same historical values. The orbital artwork is an abstract visual motif, not a patient signal or model output.
+Open `http://localhost:8080`. Charts read `dist/results.js`; the downloadable CSV contains the same historical values. The heart illustration and classifier glyph are decorative research motifs, not patient measurements or a plot of model results.
 
 ## Files
 

@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="theme-color" content="#300c19">
+  <meta name="theme-color" content="#102f43">
   <meta name="description" content="Seven classifiers. One controlled comparison. Explore Siddique Sayed's MSc research into cardiovascular disease classification.">
   <title>Cardio — A study in comparison / Siddique Sayed</title>
   <link rel="icon" href="assets/mark.svg" type="image/svg+xml">
@@ -14,7 +14,7 @@
 <body>
   <a class="skip" href="#main">Skip to research</a>
   <header class="header">
-    <a class="wordmark" href="#top" aria-label="Cardio research home"><span class="mark">c<span>·</span></span><span>CARDIO<span class="brand-sub">A STUDY IN COMPARISON</span></span></a>
+    <a class="wordmark" href="#top" aria-label="Cardio research home"><span class="mark">c<span>·</span></span><span>CARDIO<span class="brand-sub">CARDIOVASCULAR ML RESEARCH</span></span></a>
     <nav aria-label="Main navigation"><a href="#experiment">The experiment</a><a href="#results">Results</a><a href="#resources">Explore the work <span aria-hidden="true">↗</span></a></nav>
     <button id="motion" class="motion" type="button" aria-pressed="false"><span class="motion-dot"></span><span id="motion-label">Pause motion</span></button>
   </header>
@@ -29,31 +29,35 @@
           <div class="hero-actions"><a class="button light" href="#results">Explore the results <span aria-hidden="true">↗</span></a><a class="text-link" href="resources/dissertation.pdf">Read the dissertation <span aria-hidden="true">↓</span></a></div>
           <div class="author"><span class="initials">SS</span><span><strong>Siddique Sayed</strong><small>MSc Advanced Data Science & AI · COMP702</small></span></div>
         </div>
-        <div class="hero-art" role="img" aria-label="Abstract seven-orbit illustration representing seven models studying 70,000 source records">
-          <span class="art-corner top-left">FIG. 01 / CONTROLLED COMPARISON</span>
-          <svg class="orbit-art" viewBox="0 0 600 550" aria-hidden="true">
+        <div class="hero-art cardio-lab" role="img" aria-label="Illustrated heart connected to age, blood pressure and BMI features, alongside reported model results">
+          <div class="lab-top"><span><i></i> CARDIOVASCULAR CLASSIFICATION</span><span>COMP702 / 2026</span></div>
+          <svg class="heart-art" viewBox="0 0 600 430" aria-hidden="true">
             <defs>
-              <radialGradient id="glow"><stop stop-color="#fa9fae" stop-opacity=".3"/><stop offset="1" stop-color="#f999ac" stop-opacity="0"/></radialGradient>
-              <linearGradient id="orbitColor" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#ffc8c2"/><stop offset=".5" stop-color="#ab546e"/><stop offset="1" stop-color="#f4b79a"/></linearGradient>
+              <pattern id="labGrid" width="24" height="24" patternUnits="userSpaceOnUse"><path d="M24 0H0V24" fill="none" stroke="#335568" stroke-width=".5"/></pattern>
+              <radialGradient id="heartGlow"><stop stop-color="#32bdb1" stop-opacity=".2"/><stop offset="1" stop-color="#32bdb1" stop-opacity="0"/></radialGradient>
+              <linearGradient id="heartFill" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#174d5b"/><stop offset="1" stop-color="#122e44"/></linearGradient>
             </defs>
-            <circle cx="300" cy="270" r="250" fill="url(#glow)"/>
-            <g class="orbital-lines" fill="none" stroke="url(#orbitColor)" stroke-width=".8">
-              <ellipse cx="300" cy="270" rx="245" ry="91" transform="rotate(-35 300 270)"/>
-              <ellipse cx="300" cy="270" rx="245" ry="91" transform="rotate(-10 300 270)"/>
-              <ellipse cx="300" cy="270" rx="245" ry="91" transform="rotate(15 300 270)"/>
-              <ellipse cx="300" cy="270" rx="245" ry="91" transform="rotate(40 300 270)"/>
-              <ellipse cx="300" cy="270" rx="245" ry="91" transform="rotate(65 300 270)"/>
-              <ellipse cx="300" cy="270" rx="245" ry="91" transform="rotate(90 300 270)"/>
-              <ellipse cx="300" cy="270" rx="245" ry="91" transform="rotate(115 300 270)"/>
+            <rect width="600" height="430" fill="url(#labGrid)"/>
+            <circle cx="320" cy="225" r="190" fill="url(#heartGlow)"/>
+            <g class="feature-connections" fill="none" stroke="#49b8b3" stroke-width="1" opacity=".6">
+              <path d="M102 145H155L215 190"/><path d="M102 218H204"/><path d="M102 291H155L228 270"/>
+              <path d="M405 218H445L480 183H542"/>
             </g>
-            <g class="orbital-dots" fill="#ffd9c8"><circle cx="126" cy="120" r="4"/><circle cx="495" cy="201" r="4"/><circle cx="325" cy="505" r="4"/><circle cx="82" cy="355" r="4"/><circle cx="413" cy="65" r="4"/></g>
-            <circle cx="300" cy="270" r="110" fill="#300c19" stroke="#b7677e" stroke-width=".7"/>
-            <circle cx="300" cy="270" r="101" fill="none" stroke="#633045" stroke-width=".5"/>
-            <text x="300" y="268" text-anchor="middle" fill="#fff0df" font-family="Georgia,serif" font-size="45">70,000</text>
-            <text x="300" y="296" text-anchor="middle" fill="#cf9baa" font-family="Arial,sans-serif" font-size="9" letter-spacing="3">SOURCE RECORDS</text>
+            <g fill="#112f44" stroke="#3b6778" stroke-width="1"><rect x="22" y="130" width="80" height="29" rx="3"/><rect x="22" y="203" width="104" height="29" rx="3"/><rect x="22" y="276" width="80" height="29" rx="3"/></g>
+            <g fill="#addbd6" font-family="Arial,sans-serif" font-size="9" text-anchor="middle" letter-spacing="1"><text x="62" y="149">AGE</text><text x="74" y="222">BP</text><text x="62" y="295">BMI</text></g>
+            <g class="heart-shape" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M291 130C270 99 224 109 218 150C177 148 169 188 184 226C194 256 202 295 232 333C256 363 297 379 327 348C360 316 398 282 407 238C418 199 396 166 366 162C363 129 335 114 311 133" fill="url(#heartFill)" stroke="#62cfbf" stroke-width="2"/>
+              <path d="M286 170C272 150 268 118 273 91L278 66L298 71L292 108L301 143M312 151C317 125 320 102 310 81L329 72C345 103 342 126 339 154M302 108C318 110 334 102 354 96L366 116C352 125 340 131 325 133" fill="#164656" stroke="#8cddd1" stroke-width="2"/>
+              <path d="M220 161C241 152 267 162 285 187C306 167 339 159 365 174M282 187C295 213 286 249 301 278C312 302 317 326 307 350M288 215C257 214 238 244 222 259M288 243C320 223 347 221 380 231M299 277C331 265 350 271 365 285M265 218C248 200 236 195 213 200M244 237L235 285M329 232L342 205M322 270L331 312" fill="none" stroke="#3aa6a6" stroke-width="1.5"/>
+              <path d="M217 172C193 164 179 153 166 138M205 191L170 188M370 181L405 153M390 203L421 192" fill="none" stroke="#78cece" stroke-width="4"/>
+              <path d="M233 315C250 333 272 345 290 344" fill="none" stroke="#8cddd1" stroke-width="1" opacity=".65"/>
+            </g>
+            <g fill="#e3a18d"><circle cx="286" cy="215" r="3"/><circle cx="298" cy="278" r="3"/></g>
+            <g fill="#9dbfc9" font-family="Courier New,monospace" font-size="7" letter-spacing="1.3"><text x="22" y="349">10 INPUT FEATURES</text><text x="22" y="364">7 SUPERVISED MODELS</text><text x="428" y="172">CLASSIFIERS</text></g>
+            <g transform="translate(475 206)" stroke="#579da9" stroke-width="1"><path d="M0 0L28 20L0 40M28 20L56 0M28 20L56 40M0 0L0 40M56 0V40M28 20V65" fill="none"/><g fill="#153e51"><circle r="6"/><circle cy="40" r="6"/><circle cx="28" cy="20" r="7" fill="#6ed9c3"/><circle cx="56" r="6"/><circle cx="56" cy="40" r="6"/><circle cx="28" cy="65" r="6"/><circle cx="28" cy="-25" r="6"/></g><path d="M28 -19V13"/></g>
           </svg>
-          <span class="art-tag tag-one"><i></i> 7 CLASSIFIERS</span><span class="art-tag tag-two"><i></i> 5 EVALUATION METRICS</span>
-          <span class="art-corner bottom-right">SAME DATA. DIFFERENT PERSPECTIVES.</span>
+          <div class="lab-bottom"><div><span>REPORTED RF ROC-AUC</span><strong>0.8062 <i>↗</i></strong></div><div><span>SOURCE DATASET</span><strong>70,000 <small>records</small></strong></div></div>
+          <p class="lab-caption">ILLUSTRATED RESEARCH MOTIF · TABULAR DATA STUDY</p>
         </div>
       </div>
       <div class="hero-foot"><span>SUPERVISED LEARNING / SEPTEMBER 2026</span><a href="#experiment">SCROLL TO INVESTIGATE <span aria-hidden="true">↓</span></a></div>
